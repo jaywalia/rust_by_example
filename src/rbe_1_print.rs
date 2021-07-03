@@ -56,3 +56,21 @@ pub fn print_test_person() {
     // pretty print
     println!("{:#?}", peter);
 }
+
+//#[derive(Debug)]
+pub struct Point2D {x:f64, y:f64}
+
+impl fmt::Display for Point2D {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "({},{})", self.x, self.y)
+    }
+}
+
+pub fn print_test_point2d() {
+    let origin = Point2D {x: 0.0, y: 0.0};
+    println!("{}",origin);
+
+    // following won't work as #derive(Debug) is not on
+    //println!("{:?}",origin);
+    //println!("{:#?}",origin);
+}

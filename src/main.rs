@@ -4,6 +4,7 @@
 
 
 mod rbe_1_print;
+mod rbe_1_print_list;
 
 /// main funtion : entry point
 fn main() {
@@ -15,4 +16,11 @@ fn main() {
 
     // print struct
     rbe_1_print::print_test_person();
+
+    // print point
+    rbe_1_print::print_test_point2d();
+
+    // print list of floats
+    let lf = rbe_1_print_list::List(vec![1.0, 2.0, 3.0, 4.0]);
+    println!("{}", lf);
 }
