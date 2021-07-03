@@ -5,6 +5,7 @@
 
 mod rbe_1_print;
 mod rbe_1_print_list;
+mod rbe_1_formatting;
 
 /// main funtion : entry point
 fn main() {
@@ -23,4 +24,7 @@ fn main() {
     // print list of floats
     let lf = rbe_1_print_list::List(vec![1.0, 2.0, 3.0, 4.0]);
     println!("{}", lf);
+
+    // print colors
+    rbe_1_formatting::test_print_city_colors();
 }
