@@ -1,7 +1,7 @@
 /// print examples
 /// 
 
-pub fn print_days_left_in_year(){
+pub fn _print_days_left_in_year(){
     println!("{}", 10);
 
     // positional args
@@ -41,7 +41,7 @@ impl fmt::Display for Person<'_> {
     }
 }
 
-pub fn print_test_person() {
+pub fn _print_test_person() {
     let name = "Peter";
     let age = 27;
     let peter = Person {name, age};
@@ -66,7 +66,7 @@ impl fmt::Display for Point2D {
     }
 }
 
-pub fn print_test_point2d() {
+pub fn _print_test_point2d() {
     let origin = Point2D {x: 0.0, y: 0.0};
     println!("{}",origin);
 

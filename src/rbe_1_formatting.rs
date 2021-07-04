@@ -37,13 +37,13 @@ impl Display for Color {
     }
 }
 
-pub fn test_print_orange(){
+pub fn _test_print_orange(){
     let orng = Color{red: 255, green:165, blue:0};
 
     println!("Orange: {}", orng);
 }
 
-pub fn test_print_city_colors(){
+pub fn _test_print_city_colors(){
     // cities
     for city in [
         City { name: "Dublin", lat: 53.347778, lon: -6.259722 },
@@ -54,7 +54,7 @@ pub fn test_print_city_colors(){
     }
 
     // colors
-    test_print_orange();
+    _test_print_orange();
     for color in [
         Color { red: 128, green: 255, blue: 90 },
         Color { red: 0, green: 3, blue: 254 },
