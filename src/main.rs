@@ -24,6 +24,8 @@ fn rbe_2(){
     rbe_2_primitives::_tuples();
     // matrix
     rbe_2_primitives::_test_matrix();
+    // arrays n slices
+    rbe_2_primitives::_arrays_n_slices();
 }
 
 // chapter 1
