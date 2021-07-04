@@ -48,7 +48,7 @@ pub fn _literals_n_operators() {
     println!("One million is written as {}", 1_000_000u32);
 }
 //==================================================
-fn reverse(pair:(i32, bool)) -> (bool, i32) { 
+fn _reverse(pair:(i32, bool)) -> (bool, i32) { 
     let (a,b) = pair;
     (b,a)
 }
@@ -78,7 +78,7 @@ pub fn _tuples(){
     let pair = (1, true);
     println!("pair is {:?}", pair);
 
-    println!("the reversed pair is {:?}", reverse(pair));
+    println!("the reversed pair is {:?}", _reverse(pair));
 
     // To create one element tuples, the comma is required to tell them apart
     // from a literal surrounded by parentheses
@@ -107,14 +107,14 @@ impl fmt::Display for Matrix {
 }
 
 // transpose the matrix (destructure the input)
-pub fn transpose(m: Matrix) -> Matrix {
+pub fn _transpose(m: Matrix) -> Matrix {
     Matrix(m.0, m.2, m.1, m.3)
 }
 
 pub fn _test_matrix() {
     let m = Matrix(1.1, 1.2, 2.1, 2.2);
     println!("Matrix:\n{}", m);
-    let t = transpose(m);
+    let t = _transpose(m);
     println!("Transpose:\n{}", t);
 
 }
@@ -122,7 +122,7 @@ pub fn _test_matrix() {
 //==================================================
 use std::mem;
 
-fn analyze_slice(s: &[i32]) {
+fn _analyze_slice(s: &[i32]) {
     println!("first element of the slice is: {}", s[0]);
     println!("the slice has {} elements", s.len());
 }
@@ -148,18 +148,19 @@ pub fn _arrays_n_slices() {
 
     // Arrays can be automatically borrowed as slices
     println!("borrow the whole array as a slice");
-    analyze_slice(&xs);
+    _analyze_slice(&xs);
 
     // smaller slice
-    analyze_slice(&xs[2..]);
+    _analyze_slice(&xs[2..]);
 
     // Slices can point to a section of an array
     // They are of the form [starting_index..ending_index]
     // starting_index is the first position in the slice
     // ending_index is one more than the last position in the slice
     println!("borrow a section of the array as a slice");
-    analyze_slice(&ys[1..4]);
+    _analyze_slice(&ys[1..4]);
 
     // Out of bound indexing causes compile error
     //println!("{}", xs[5]);
 }
+

@@ -3,7 +3,7 @@
 
 // https://doc.rust-lang.org/stable/rust-by-example/index.html
 
-
+mod rbe_0_closures;
 mod rbe_1_print;
 mod rbe_1_print_list;
 mod rbe_1_formatting;
@@ -11,11 +11,11 @@ mod rbe_2_primitives;
 
 /// main funtion : entry point
 fn main() {
-    rbe_2();
+    _rbe_0();
 }
 
 // chapter 2
-fn rbe_2(){
+fn _rbe_2(){
     // primitives
     rbe_2_primitives::_primitives();
     // literals and operators
@@ -48,4 +48,10 @@ fn _rbe_1(){
 
     // print colors
     rbe_1_formatting::_test_print_city_colors();
+}
+
+// chapter 0
+fn _rbe_0() {
+    // test closure
+    rbe_0_closures::_test_closure();
 }
