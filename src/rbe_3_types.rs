@@ -15,19 +15,15 @@ impl fmt::Display for Person {
 }
 
 
-#[allow(dead_code)]
 struct Unit;
 
-#[allow(dead_code)]
 struct Pair(i32, f32);
 
-#[allow(dead_code)]
 struct Point{
     x: f32,
     y: f32
 }
 
-#[allow(dead_code)]
 struct Rectangle {
     top_left: Point,
     bottom_right: Point
