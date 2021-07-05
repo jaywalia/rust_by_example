@@ -8,10 +8,17 @@ mod rbe_1_print;
 mod rbe_1_print_list;
 mod rbe_1_formatting;
 mod rbe_2_primitives;
+mod rbe_3_types;
 
 /// main funtion : entry point
 fn main() {
-    _rbe_0();
+    _rbe_3();
+}
+
+// chapter 3
+fn _rbe_3(){
+    //structures
+    rbe_3_types::test_structures();
 }
 
 // chapter 2
