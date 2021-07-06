@@ -8,7 +8,8 @@ mod rbe_1_print;
 mod rbe_1_print_list;
 mod rbe_1_formatting;
 mod rbe_2_primitives;
-mod rbe_3_types;
+mod rbe_3_structs;
+mod rbe_3_enums;
 
 /// main funtion : entry point
 fn main() {
@@ -18,7 +19,9 @@ fn main() {
 // chapter 3
 fn _rbe_3(){
     //structures
-    rbe_3_types::test_structures();
+    rbe_3_structs::test_structures();
+    rbe_3_enums::test_inspect_web_events();
+    rbe_3_enums::test_long_enums();
 }
 
 // chapter 2
@@ -33,6 +36,7 @@ fn _rbe_2(){
     rbe_2_primitives::_test_matrix();
     // arrays n slices
     rbe_2_primitives::_arrays_n_slices();
+
 }
 
 // chapter 1
