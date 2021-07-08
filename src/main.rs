@@ -12,6 +12,7 @@ mod rbe_3_structs;
 mod rbe_3_enums;
 mod rbe_3_use;
 mod rbe_3_list;
+mod rbe_3_consts;
 
 /// main funtion : entry point
 fn main() {
@@ -27,6 +28,7 @@ fn _rbe_3(){
     rbe_3_use::test_enum_use();
     rbe_3_use::test_c_like_enums();
     rbe_3_list::test_list();
+    rbe_3_consts::test_consts();
 }
 
 // chapter 2
