@@ -13,25 +13,48 @@ mod rbe_3_enums;
 mod rbe_3_use;
 mod rbe_3_list;
 mod rbe_3_consts;
+mod rbe_4_variables;
+mod rbe_5_types;
+mod rbe_6_conversions;
 
 /// main funtion : entry point
 fn main() {
-    _rbe_3();
+    _rbe_7();
 }
 
-// chapter 3
+// chapter 7: expressions
+fn _rbe_7(){}
+
+// chapter 6: conversions
+fn _rbe_6() {
+    rbe_6_conversions::_test_from_into();
+    rbe_6_conversions::_test_try_from_into();
+    rbe_6_conversions::_test_circle();
+}
+
+// chapter 5 : types
+fn _rbe_5() {
+    rbe_5_types::_test_types();
+}
+
+// chapter 4 : variables
+fn _rbe_4() {
+    rbe_4_variables::_test_variables();
+}
+
+// chapter 3 : structs
 fn _rbe_3(){
     //structures
-    rbe_3_structs::test_structures();
-    rbe_3_enums::test_inspect_web_events();
-    rbe_3_enums::test_long_enums();
-    rbe_3_use::test_enum_use();
-    rbe_3_use::test_c_like_enums();
-    rbe_3_list::test_list();
-    rbe_3_consts::test_consts();
+    rbe_3_structs::_test_structures();
+    rbe_3_enums::_test_inspect_web_events();
+    rbe_3_enums::_test_long_enums();
+    rbe_3_use::_test_enum_use();
+    rbe_3_use::_test_c_like_enums();
+    rbe_3_list::_test_list();
+    rbe_3_consts::_test_consts();
 }
 
-// chapter 2
+// chapter 2 : primitives
 fn _rbe_2(){
     // primitives
     rbe_2_primitives::_primitives();
@@ -46,7 +69,7 @@ fn _rbe_2(){
 
 }
 
-// chapter 1
+// chapter 1 : hello
 fn _rbe_1(){
     //! Ocean for crabs!
     println!("Hello, ocean by Rustaceans!");

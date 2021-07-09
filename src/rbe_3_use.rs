@@ -10,7 +10,7 @@ enum Work {
     Soldier
 }
 
-pub fn test_enum_use() {
+pub fn _test_enum_use() {
 
     use Status::{Rich,Poor};
     use Work::*;
@@ -43,7 +43,7 @@ enum Color {
     Blue = 0x0000ff
 }
 
-pub fn test_c_like_enums() {
+pub fn _test_c_like_enums() {
     println!("zero is {}", Number::Zero as i32);
     println!("one is {}", Number::One as i32);
 

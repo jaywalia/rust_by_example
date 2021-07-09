@@ -15,28 +15,28 @@ impl fmt::Display for Person {
 }
 
 
-struct Unit;
+struct _Unit;
 
-struct Pair(i32, f32);
+struct _Pair(i32, f32);
 
-struct Point{
+struct _Point{
     x: f32,
     y: f32
 }
 
-struct Rectangle {
-    top_left: Point,
-    bottom_right: Point
+struct _Rectangle {
+    top_left: _Point,
+    bottom_right: _Point
 }
 
 // activity 1
-fn rect_area(r: &Rectangle) -> f32 {
+fn _rect_area(r: &_Rectangle) -> f32 {
     // destructure
     // syntax is really ugly
     //Point{x: top_left_x}   is assigning the value to top_left_x
-    let Rectangle {
-        top_left: Point{x: top_left_x, y: top_left_y}, 
-        bottom_right: Point{x: bottom_right_x, y: bottom_right_y}} = r;
+    let _Rectangle {
+        top_left: _Point{x: top_left_x, y: top_left_y}, 
+        bottom_right: _Point{x: bottom_right_x, y: bottom_right_y}} = r;
 
     let length: f32 = bottom_right_x - top_left_x;
     let width: f32 = top_left_y - bottom_right_y;
@@ -45,93 +45,93 @@ fn rect_area(r: &Rectangle) -> f32 {
 }
 
 // activity 2
-fn square(p: Point, len: f32) -> Rectangle {
+fn _square(p: _Point, len: f32) -> _Rectangle {
     //! Point p is bottom left,
-    let r = Rectangle{
-        top_left: Point{x:p.x, y:p.y+len},
-        bottom_right: Point{x:p.x+len, y:p.y}
+    let r = _Rectangle{
+        top_left: _Point{x:p.x, y:p.y+len},
+        bottom_right: _Point{x:p.x+len, y:p.y}
     };
 
     r
 }
 
-pub fn test_structures() {
-    test_print_person();
-    test_print_points();
-    test_print_others();
+pub fn _test_structures() {
+    _test_print_person();
+    _test_print_points();
+    _test_print_others();
 
-    test_print_rectangle_activity();
+    _test_print_rectangle_activity();
 }
 
-fn test_print_points(){
+fn _test_print_points(){
     // Instantiate a `Point`
-    let point: Point = Point { x: 10.3, y: 0.4 };
+    let point: _Point = _Point { x: 10.3, y: 0.4 };
 
     // Access the fields of the point
     println!("point coordinates: ({}, {})", point.x, point.y);
 
     // Make a new point by using struct update syntax to use the fields of our
     // other one
-    let bottom_right = Point { x: 5.2, ..point };
+    let bottom_right = _Point { x: 5.2, ..point };
 
     // `bottom_right.y` will be the same as `point.y` because we used that field
     // from `point`
     println!("second point: ({}, {})", bottom_right.x, bottom_right.y);
 
     // Destructure the point using a `let` binding
-    let Point { x: top_edge, y: left_edge } = point;
+    let _Point { x: top_edge, y: left_edge } = point;
 
-    let _rectangle = Rectangle {
+    let _rectangle = _Rectangle {
         // struct instantiation is an expression too
-        top_left: Point { x: left_edge, y: top_edge },
+        top_left: _Point { x: left_edge, y: top_edge },
         bottom_right: bottom_right,
     };
 
-    let _rect_area = rect_area(&_rectangle);
+    let _rect_area = _rect_area(&_rectangle);
 
     println!("Areas: {}", _rect_area);
 }
 
-fn test_print_others(){
+fn _test_print_others(){
     // Instantiate a unit struct
-    let _unit = Unit;
+    let _unit = _Unit;
 
     // Instantiate a tuple struct
-    let pair = Pair(1, 0.1);
+    let pair = _Pair(1, 0.1);
 
     // Access the fields of a tuple struct
     println!("pair contains {:?} and {:?}", pair.0, pair.1);
 
     // Destructure a tuple struct
-    let Pair(int_val, dec_val) = pair;
+    let _Pair(int_val, dec_val) = pair;
 
     println!("pair contains {:?} and {:?}", int_val, dec_val);
 }
 
-fn test_print_rectangle_activity() {
-    activity_1();
-    activity_2();
+fn _test_print_rectangle_activity() {
+    _activity_1();
+    _activity_2();
 }
 
-fn activity_1(){
-    let _r2 = Rectangle {
-        top_left: Point {x: 1.0, y: 4.0},
-        bottom_right: Point {x: 4.0, y: 1.0}
+fn _activity_1(){
+    let _r2 = _Rectangle {
+        top_left: _Point {x: 1.0, y: 4.0},
+        bottom_right: _Point {x: 4.0, y: 1.0}
     };
-    let _r2_area = rect_area(&_r2);
+    let _r2_area = _rect_area(&_r2);
     println!("Areas: {}", _r2_area);
 }
 
 
 
-fn activity_2(){
-    let p = Point{x:2.0,y:2.0};
+fn _activity_2(){
+    let p = _Point{x:2.0,y:2.0};
     let len = 10.0;
-    let sq = square(p, len);
-    println!("{}", rect_area(&sq));
+    let sq = _square(p, len);
+    println!("{}", _rect_area(&sq));
 }
 
-fn test_print_person() {
+fn _test_print_person() {
     let name = String::from("Peter");
     let age = 1;
     let peter = Person {name, age};

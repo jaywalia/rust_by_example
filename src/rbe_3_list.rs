@@ -1,7 +1,7 @@
 
-enum List {
+enum _List {
     // Cons: Tuple struct that wraps an element and a pointer to the next node
-    Cons(u32, Box<List>),
+    Cons(u32, Box<_List>),
     // Nil: A node that signifies the end of the linked list
     Nil,
 }
@@ -11,23 +11,23 @@ enum List {
 // will make Rust adoption slower
 
 // need List::* to expose Con & Nil
-use List::*;
+use _List::*;
 // Methods can be attached to an enum
-impl List {
+impl _List {
     // Create an empty list
-    fn new() -> List {
+    fn _new() -> _List {
         // `Nil` has type `List`
         Nil
     }
 
     // Consume a list, and return the same list with a new element at its front
-    fn prepend(self, elem: u32) -> List {
+    fn _prepend(self, elem: u32) -> _List {
         // `Cons` also has type List
         Cons(elem, Box::new(self))
     }
 
     // Return the length of the list
-    fn len(&self) -> u32 {
+    fn _len(&self) -> u32 {
         // `self` has to be matched, because the behavior of this method
         // depends on the variant of `self`
         // `self` has type `&List`, and `*self` has type `List`, matching on a
@@ -38,19 +38,19 @@ impl List {
         match *self {
             // Can't take ownership of the tail, because `self` is borrowed;
             // instead take a reference to the tail
-            Cons(_, ref tail) => 1 + tail.len(),
+            Cons(_, ref tail) => 1 + tail._len(),
             // Base Case: An empty list has zero length
             Nil => 0
         }
     }
 
     // Return representation of the list as a (heap allocated) string
-    fn stringify(&self) -> String {
+    fn _stringify(&self) -> String {
         match *self {
             Cons(head, ref tail) => {
                 // `format!` is similar to `print!`, but returns a heap
                 // allocated string instead of printing to the console
-                format!("{}, {}", head, tail.stringify())
+                format!("{}, {}", head, tail._stringify())
             },
             Nil => {
                 format!("Nil")
@@ -60,13 +60,13 @@ impl List {
 }
 
 // build a list
-pub fn test_list() {
-    let mut list = List::new();
+pub fn _test_list() {
+    let mut list = _List::_new();
 
-    list = list.prepend(1);
-    list = list.prepend(2);
-    list = list.prepend(3);
+    list = list._prepend(1);
+    list = list._prepend(2);
+    list = list._prepend(3);
 
-    println!("linked list has length: {}", list.len());
-    println!("{}", list.stringify());
+    println!("linked list has length: {}", list._len());
+    println!("{}", list._stringify());
 }
