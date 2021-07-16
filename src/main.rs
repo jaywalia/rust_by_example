@@ -16,14 +16,25 @@ mod rbe_3_consts;
 mod rbe_4_variables;
 mod rbe_5_types;
 mod rbe_6_conversions;
+mod rbe_7_expressions;
+mod rbe_8_flow;
 
 /// main funtion : entry point
 fn main() {
-    _rbe_7();
+    _rbe_8();
+}
+
+// chapter 8: control flow
+fn _rbe_8() {
+    rbe_8_flow::_test_if_else(4);
+    rbe_8_flow::_test_if_else(9);
+    rbe_8_flow::_test_loop(12);
 }
 
 // chapter 7: expressions
-fn _rbe_7(){}
+fn _rbe_7(){
+    rbe_7_expressions::_test_expressions();
+}
 
 // chapter 6: conversions
 fn _rbe_6() {
