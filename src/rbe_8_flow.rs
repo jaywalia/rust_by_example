@@ -56,3 +56,45 @@ pub fn _test_while() {
     };
 
 }
+
+pub fn _test_for() {
+    // end not included
+    for i in 1..3 {
+        println!("{}", i);
+    }
+
+    // end included
+    for i in 1..=3 {
+        println!("{}", i);
+    }
+
+    // iter - doesn't consume
+    let pets = vec!["cat", "dog", "rabbit", "shark"];
+    for p in pets.iter() {
+        match p {
+            &"shark" => println!("Are you sure? Shark is a dangerous pet."),
+            _ => println!("Wow, what a cute {}!", p),
+        }
+    }
+    println!("{:?}", pets);
+    
+    // iter into - consumes
+    for p in pets.into_iter() {
+        match p {
+            "shark" => println!("Are you sure? Shark is a dangerous pet."),
+            _ => println!("Wow, what a cute {}!", p),
+        }
+    }
+    //println!("{:?}", pets);
+
+    let mut todos = vec!["change oil", "rotate tires", "state inspection"];
+    for t in todos.iter_mut() {
+        *t = match t {
+            &mut "change oil" => "done: change oil",
+            _ => t,
+        }
+    }
+
+    println!("{:?}", todos);
+
+}

@@ -32,6 +32,7 @@ fn _rbe_8() {
     rbe_8_flow::_test_nested_labels();
     rbe_8_flow::_test_loop_returns();
     rbe_8_flow::_test_while();
+    rbe_8_flow::_test_for();
 }
 
 // chapter 7: expressions
