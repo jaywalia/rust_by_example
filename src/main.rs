@@ -18,12 +18,18 @@ mod rbe_5_types;
 mod rbe_6_conversions;
 mod rbe_7_expressions;
 mod rbe_8_flow;
+mod rbe_9_match;
+mod rbe_9_lets;
 
 /// main funtion : entry point
 fn main() {
-    _rbe_8();
+    _rbe_9();
 }
 
+fn _rbe_9() {
+    rbe_9_match::_test_match();
+    rbe_9_lets::_test_if_let();
+}
 // chapter 8: control flow
 fn _rbe_8() {
     rbe_8_flow::_test_if_else(4);
@@ -33,6 +39,7 @@ fn _rbe_8() {
     rbe_8_flow::_test_loop_returns();
     rbe_8_flow::_test_while();
     rbe_8_flow::_test_for();
+
 }
 
 // chapter 7: expressions
